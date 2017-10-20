@@ -10,16 +10,16 @@ messagingSenderId: "548384395530"
 
 firebase.initializeApp(config);
 
-//var database = firebase.database()
+var database = firebase.database()
 
 var provider = new firebase.auth.GoogleAuthProvider();
 
 firebase.auth().signInWithRedirect(provider);
 
-/* var userId = firebase.auth().currentUser.uid;
+var userId = firebase.auth().currentUser.uid;
 var content = firebase.database().ref('/users/' + userId).once('premed-dbe50').then(function(snapshot) {
   var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
   // ...
 });
  */
-//document.getElementById('text').innerHTML = content;
+document.getElementById('text').innerHTML = content;
