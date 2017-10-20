@@ -21,5 +21,5 @@ var content = firebase.database().ref('/users/' + userId).once('premed-dbe50').t
   var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
   // ...
 });
- */
+
 document.getElementById('text').innerHTML = content;
