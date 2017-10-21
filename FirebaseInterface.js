@@ -8,6 +8,8 @@ storageBucket: "premed-dbe50.appspot.com",
 messagingSenderId: "548384395530"
 };
 
+var content = "nothing"
+
 firebase.initializeApp(config);
 
 var database = firebase.database()
@@ -15,12 +17,13 @@ function auth()
 {
 	var provider = new firebase.auth.GoogleAuthProvider();
 	firebase.auth().signInWithPopup(provider);
+	getdata()
 }
 
 function getdata()
 {
 	var userId = firebase.auth().currentUser.uid;
-	var content = firebase.database().ref('/users/' + userId).once('premed-dbe50');
+	content = firebase.database().ref('/users/' + userId).once('premed-dbe50');
 }
 
 
