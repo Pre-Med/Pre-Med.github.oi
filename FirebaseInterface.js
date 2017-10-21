@@ -18,6 +18,8 @@ function auth()
 	var provider = new firebase.auth.GoogleAuthProvider();
 	firebase.auth().signInWithPopup(provider);
 	getdata()
+	
+	document.getElementById('text').innerHTML = content;
 }
 
 function getdata()
@@ -27,4 +29,3 @@ function getdata()
 }
 
 
-document.getElementById('text').innerHTML = content;
