@@ -24,8 +24,7 @@ function auth()
 
 function getdata()
 {
-	var userId = firebase.auth().currentUser.uid;
-	content = firebase.database().ref('/users/' + userId).once('premed-dbe50');
+	content = firebase.database().ref('/users/yTc9HT1DEYPvwGzZ7S5ljXgPkVs1').once('premed-dbe50');
 }
 
 
