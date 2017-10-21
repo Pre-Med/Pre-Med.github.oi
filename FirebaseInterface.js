@@ -11,11 +11,17 @@ messagingSenderId: "548384395530"
 firebase.initializeApp(config);
 
 var database = firebase.database()
+function auth()
+{
+	var provider = new firebase.auth.GoogleAuthProvider();
+	firebase.auth().signInWithPopup(provider);
+}
 
-var userId = firebase.auth().currentUser.uid;
-var content = firebase.database().ref('/users/' + userId).once('premed-dbe50').then(function(snapshot) {
-  var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-  // ...
-});
+function getdata()
+{
+	var userId = firebase.auth().currentUser.uid;
+	var content = firebase.database().ref('/users/' + userId).once('premed-dbe50');
+}
+
 
 document.getElementById('text').innerHTML = content;
